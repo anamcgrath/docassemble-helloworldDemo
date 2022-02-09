@@ -1,0 +1,36 @@
+---
+question: Hello, ${ planet }!
+subquestion: |
+  I surmise that you have no more than ${ inhabitant_count } inhabitants.
+attachment:
+  name: A letter for the inhabitants of ${ planet }
+  filename: hello
+  docx template file: hello_planet.docx
+buttons: 
+  - Exit: exit
+mandatory: True
+---
+image sets:
+  pixabay:
+    images:
+      solar_system: solar-system.jpg
+    attribution: |
+      Icon made by [Pixabay](https://pixabay.com/photos/solar-system-sun-mercury-venus-439046/)
+---
+question: |
+  What is your planet's name?
+fields: 
+  - Your Planet: planet
+decoration: solar_system
+---
+code: | 
+  if favourite_number == 42:
+    inhabitant_count = 2
+  else:
+    inhabitant_count = 2000 + favourite_number * 45
+---
+question: What is your favourite number?
+fields:
+  - Number: favourite_number
+    datatype: number
+---
